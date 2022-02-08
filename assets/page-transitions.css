@@ -6,13 +6,3 @@
 .page-leave-active {
   opacity: 0;
 }
-
-h1 {
-  transition: all 0.25s 0.25s;
-}
-
-.page-enter h1,
-.page-leave-active h1 {
-  transform-origin: left center;
-  opacity: 0;
-}

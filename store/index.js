@@ -12,12 +12,13 @@ export const mutations = {
   },
 }
 export const actions = {
-  async nuxtServerInit({ commit }) {
-    const response = await this.$axios.$get('users')
-    commit('SET_USERS', response)
+  async nuxtServerInit({ dispatch }) {
+    console.log('nuxtServerInit')
+    await dispatch('department/getCategories')
   },
-  async LOAD_USER({ commit }, id) {
+
+  /*  async LOAD_USER({ commit }, id) {
     const response = await this.$axios.$get(`users/${id}`)
     commit('SET_CURRENT_USER', response)
-  },
+  }, */
 }

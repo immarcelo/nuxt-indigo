@@ -1,0 +1,46 @@
+body {
+  font-family: $sans-serif;
+  font-weight: 300;
+  letter-spacing: 0.05em;
+}
+
+.tc {
+  text-align: center;
+}
+p {
+  letter-spacing: 0.04em;
+}
+p:not(:first-child) {
+  margin-top: 1rem;
+}
+
+.title--default {
+  letter-spacing: -0.06em;
+  font-size: 4vw;
+  font-weight: bold;
+  font-size: 2.5rem;
+  text-transform: lowercase;
+  margin: 0;
+  @media (min-width: 768px) {
+    font-size: 4rem;
+  }
+}
+
+.title--large {
+  line-height: 1.5;
+  margin: 0;
+  font-size: clamp(4rem, 7rem, 7vw);
+  font-weight: normal;
+  font-family: $serif;
+  text-transform: uppercase;
+  letter-spacing: -0.05em;
+}
+
+.category-link {
+  font-weight: bold;
+  font-size: 1.75rem;
+  font-size: clamp(1.75rem, 6vw, 3rem);
+  &:hover {
+    color: $paleGold;
+  }
+}

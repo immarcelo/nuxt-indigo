@@ -1,23 +1,43 @@
 <template>
-  <div class="pa4">
-    <ul>
-      <li
-        v-for="(user, index) in users"
-        :key="user.id"
-        :class="[index === 0 ? 'mb2' : 'mv2']"
-      >
-        <nuxt-link :to="'/person/' + user.id">{{ user.name }}</nuxt-link>
-      </li>
-    </ul>
+  <div>
+    <AboutUs />
+    <HighlightedProducts />
+    <Collections />
+    <BrowseBy />
+    <End />
   </div>
 </template>
 
-<script lang="ts">
-import Vue from 'vue'
-import { mapState } from 'vuex'
+<script>
+import { mapMutations } from 'vuex'
 
-export default Vue.extend({
-  name: 'IndexPage',
-  computed: mapState(['users']),
-})
+import HighlightedProducts from '~/components/home/HighlightedProducts.vue'
+import AboutUs from '~/components/home/AboutUs.vue'
+import Collections from '~/components/home/Collections.vue'
+import BrowseBy from '~/components/home/BrowseBy.vue'
+import End from '~/components/home/End.vue'
+export default {
+  components: {
+    HighlightedProducts,
+    AboutUs,
+    Collections,
+    BrowseBy,
+    End,
+  },
+
+  computed: {
+    product() {
+      return this.$store.state.products.productName
+    },
+  },
+
+  methods: {
+    ...mapMutations({
+      setProduct: 'products/setProduct',
+    }),
+    changeName() {
+      this.setProduct(this.inputName)
+    },
+  },
+}
 </script>

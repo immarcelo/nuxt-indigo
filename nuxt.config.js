@@ -12,7 +12,11 @@ export default {
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
-  css: ['tachyons/css/tachyons.min.css', '~/assets/page-transitions.css'],
+  css: [
+    'normalize.css/normalize.css',
+    '~/assets/page-transitions.css',
+    '~/assets/scss/main',
+  ],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [],
@@ -22,11 +26,16 @@ export default {
 
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
   buildModules: [
-    // https://go.nuxtjs.dev/typescript
     '@nuxt/typescript-build',
-    // https://go.nuxtjs.dev/stylelint
     '@nuxtjs/stylelint-module',
+    '@nuxtjs/style-resources',
+    '@nuxtjs/google-fonts',
+    '@nuxt-hero-icons/outline/nuxt',
   ],
+
+  styleResources: {
+    scss: ['~assets/scss/variables.scss'],
+  },
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
@@ -40,8 +49,7 @@ export default {
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {
-    // Workaround to avoid enforcing hard-coded localhost:3000: https://github.com/nuxt-community/axios-module/issues/308
-    baseURL: 'https://jsonplaceholder.typicode.com/',
+    baseURL: 'https://fakestoreapi.com/',
   },
 
   // PWA module configuration: https://go.nuxtjs.dev/pwa
@@ -56,4 +64,16 @@ export default {
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {},
+
+  googleFonts: {
+    display: 'swap',
+    families: {
+      'STIX+Two+Text': true,
+      'Josefin+Sans': [300, 400],
+    },
+  },
+
+  server: {
+    host: '0', // default: localhost
+  },
 }

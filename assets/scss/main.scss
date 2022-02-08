@@ -1,0 +1,27 @@
+@import './variables.scss';
+@import './reset';
+@import './_shared/container.scss';
+@import './_shared/typography.scss';
+@import './_shared/form';
+@import './_shared/icon';
+
+@import './_shared/links';
+@import './_shared/scrollbar';
+
+body {
+  color: $palatinate;
+}
+
+img {
+  display: block;
+}
+
+.flex {
+  display: flex;
+}
+.items-center {
+  align-items: center;
+}
+.justify-between {
+  align-items: center;
+}
